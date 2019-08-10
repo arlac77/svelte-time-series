@@ -1,13 +1,12 @@
 <script>
   import { scaleLinear } from "d3-scale";
   
-  export let points;
+  export let points = [];
+  export let yTicks = [];
+  export let xTicks = [];
   export let width = 500;
   export let height = 200;
 
-  export let yTicks = [0, 2, 4, 6, 8];
-  export let xTicks = [1980, 1990, 2000, 2010];
-  
   const padding = { top: 20, right: 15, bottom: 20, left: 25 };
   
   $: xScale = scaleLinear()
@@ -87,7 +86,6 @@
   <svg>
     <slot/>
     
-    <!-- y axis -->
     <g class="axis y-axis" transform="translate(0, {padding.top})">
       {#each yTicks as tick}
         <g
@@ -99,7 +97,6 @@
       {/each}
     </g>
 
-    <!-- x axis -->
     <g class="axis x-axis">
       {#each xTicks as tick}
         <g
@@ -111,7 +108,6 @@
       {/each}
     </g>
 
-    <!-- data -->
     <path class="path-area" d={area} />
     <path class="path-line" d={path} />
   </svg>
