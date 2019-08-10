@@ -2,7 +2,6 @@
   "name": "svelte-time-series",
   "version": "0.0.0-semantic-release",
   "module": "src/index.svelte",
-  "svelte": "src/index.svelte",
   "keywords": [
     "svelte"
   ],
@@ -10,6 +9,9 @@
     "pretest": "(cd example && rollup -c)",
     "start": "serve -u -s -n -l 5000 example/public",
     "test": "nightwatch -e ci"
+  },
+  "dependencies": {
+    "d3-scale": "^3.0.1"
   },
   "devDependencies": {
     "chromedriver": "^76.0.0",
@@ -37,7 +39,5 @@
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"
     }
   },
-  "dependencies": {
-    "d3-scale": "^3.0.1"
-  }
+  "svelte": "src/index.svelte"
 }
