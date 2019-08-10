@@ -1,6 +1,6 @@
 <script>
   import { scaleLinear } from "d3-scale";
-  
+
   export let points = [];
   export let yTicks = [];
   export let xTicks = [];
@@ -8,7 +8,7 @@
   export let height = 200;
 
   const padding = { top: 20, right: 15, bottom: 20, left: 25 };
-  
+
   $: xScale = scaleLinear()
     .domain([minX, maxX])
     .range([padding.left, width - padding.right]);
@@ -23,22 +23,9 @@
   $: area = `${path}L${xScale(maxX)},${yScale(0)}L${xScale(minX)},${yScale(
     0
   )}Z`;
-
-  function formatMobile(tick) {
-    return "'" + (tick % 100);
-  }
 </script>
 
 <style>
-  .chart,
-  h2,
-  p {
-    width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   svg {
     position: relative;
     width: 100%;
@@ -82,33 +69,31 @@
   }
 </style>
 
-<div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-  <svg>
-    <slot/>
-    
-    <g class="axis y-axis" transform="translate(0, {padding.top})">
-      {#each yTicks as tick}
-        <g
-          class="tick tick-{tick}"
-          transform="translate(0, {yScale(tick) - padding.bottom})">
-          <line x2="100%" />
-          <text y="-4">{tick} {tick === 8 ? ' million sq km' : ''}</text>
-        </g>
-      {/each}
-    </g>
+<svg>
+  <slot />
 
-    <g class="axis x-axis">
-      {#each xTicks as tick}
-        <g
-          class="tick tick-{tick}"
-          transform="translate({xScale(tick)},{height})">
-          <line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
-          <text y="-2">{width > 380 ? tick : formatMobile(tick)}</text>
-        </g>
-      {/each}
-    </g>
+  <g class="axis y-axis" transform="translate(0, {padding.top})">
+    {#each yTicks as tick}
+      <g
+        class="tick tick-{tick}"
+        transform="translate(0, {yScale(tick) - padding.bottom})">
+        <line x2="100%" />
+        <text y="-4">{tick}</text>
+      </g>
+    {/each}
+  </g>
 
-    <path class="path-area" d={area} />
-    <path class="path-line" d={path} />
-  </svg>
-</div>
+  <g class="axis x-axis">
+    {#each xTicks as tick}
+      <g
+        class="tick tick-{tick}"
+        transform="translate({xScale(tick)},{height})">
+        <line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
+        <text y="-2">{tick}</text>
+      </g>
+    {/each}
+  </g>
+
+  <path class="path-area" d={area} />
+  <path class="path-line" d={path} />
+</svg>
