@@ -36,5 +36,8 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"
     }
+  },
+  "dependencies": {
+    "d3-scale": "^3.0.1"
   }
 }
