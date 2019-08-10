@@ -1,14 +1,15 @@
 <script>
   import { scaleLinear } from "d3-scale";
-  import points from "./data.mjs";
+  
+  export let points;
+  export let width = 500;
+  export let height = 200;
 
-  const yTicks = [0, 2, 4, 6, 8];
-  const xTicks = [1980, 1990, 2000, 2010];
+  export let yTicks = [0, 2, 4, 6, 8];
+  export let xTicks = [1980, 1990, 2000, 2010];
+  
   const padding = { top: 20, right: 15, bottom: 20, left: 25 };
-
-  let width = 500;
-  let height = 200;
-
+  
   $: xScale = scaleLinear()
     .domain([minX, maxX])
     .range([padding.left, width - padding.right]);
@@ -84,6 +85,8 @@
 
 <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
   <svg>
+    <slot/>
+    
     <!-- y axis -->
     <g class="axis y-axis" transform="translate(0, {padding.top})">
       {#each yTicks as tick}
