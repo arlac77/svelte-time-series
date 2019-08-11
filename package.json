@@ -2,13 +2,15 @@
   "name": "svelte-time-series",
   "version": "0.0.0-semantic-release",
   "module": "src/index.svelte",
+  "svelte": "src/index.svelte",
   "keywords": [
     "svelte"
   ],
   "scripts": {
     "pretest": "(cd example && rollup -c)",
     "start": "serve -u -s -n -l 5000 example/public",
-    "test": "nightwatch -e ci"
+    "test": "nightwatch -e ci",
+    "watch": "(cd example && rollup -c -w)"
   },
   "dependencies": {
     "d3-scale": "^3.0.1"
@@ -16,7 +18,7 @@
   "devDependencies": {
     "chromedriver": "^76.0.0",
     "nightwatch": "^1.1.13",
-    "rollup": "^1.19.3",
+    "rollup": "^1.19.4",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
     "semantic-release": "^15.13.19",
@@ -38,6 +40,5 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"
     }
-  },
-  "svelte": "src/index.svelte"
+  }
 }
