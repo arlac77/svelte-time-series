@@ -7,7 +7,7 @@
   export let width = 500;
   export let height = 200;
 
-  const padding = { top: 20, right: 15, bottom: 20, left: 25 };
+  export let padding = { top: 20, right: 15, bottom: 20, left: 25 };
 
   $: xScale = scaleLinear()
     .domain([minX, maxX])
@@ -95,5 +95,7 @@
   </g>
 
   <path class="path-area" d={area} />
+  <!--
   <path class="path-line" d={path} />
+  -->
 </svg>

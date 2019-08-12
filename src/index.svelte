@@ -1,4 +1,5 @@
 <script context="module">
   import TimeSeries from './TimeSeries.svelte';
-  export { TimeSeries };
+  import DataSet from './DataSet.svelte';
+  export { TimeSeries, DataSet };
 </script>
