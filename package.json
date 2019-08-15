@@ -22,7 +22,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "semantic-release": "^15.13.21",
     "serve": "^11.1.0",
-    "svelte": "^3.8.0"
+    "svelte": "^3.8.1"
   },
   "engines": {
     "node": ">=10.16.2"
@@ -35,6 +35,9 @@
     "url": "https://github.com/arlac77/svelte-time-series/issues"
   },
   "homepage": "https://github.com/arlac77/svelte-time-series#readme",
+  "config": {
+    "port": 5000
+  },
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"
