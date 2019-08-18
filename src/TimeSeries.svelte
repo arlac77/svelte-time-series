@@ -3,7 +3,7 @@
 
   export let width = 500;
   export let height = 200;
-  export let padding;
+  export let padding = { top: 20, right: 15, bottom: 22, left: 25 };
 
   export let points = [];
   export let yTicks = [];
@@ -19,6 +19,8 @@
 
   $: minX = points[0].x;
   $: maxX = points[points.length - 1].x;
+
+  
 </script>
 
 <style>

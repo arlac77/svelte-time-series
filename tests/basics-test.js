@@ -1,27 +1,12 @@
-const assert = require("assert");
+import { Selector } from "testcafe";
 
 const base = "http://localhost:5000";
 
-const sg = (t, name = "xxx") =>
-  `test-results/${t.test.fullTitle().replace(/\s+/, "-", "g")}-${name}.png`;
+fixture`Getting Started`.page`${base}/index.html`;
 
-
-describe("example", function() {
-  this.slow(2000);
-  this.timeout(3000);
-
-  it("renders-on-the-page", async browser => {
-    browser
-      .url(base)
-      .expect.element("body")
-      .to.be.present.before(1000);
-
-    browser
-      .assert.containsText(
-        "h1",
-        "Example"
-      );
-
-    browser.end();
-  });
+test("display", async t => {
+  await t
+    .typeText("#useranme", "user1")
+    .typeText("#password", "secret")
+    .click("#submit");
 });
