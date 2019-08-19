@@ -5,8 +5,8 @@ const base = "http://localhost:5000";
 fixture`Getting Started`.page`${base}/index.html`;
 
 test("display", async t => {
+  const title = Selector("h1");
   await t
-    .typeText("#useranme", "user1")
-    .typeText("#password", "secret")
-    .click("#submit");
+    .expect(title.innerText)
+    .eql("Example");
 });
