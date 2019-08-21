@@ -14,7 +14,7 @@
     "d3-scale": "^3.0.1"
   },
   "devDependencies": {
-    "rollup": "^1.19.4",
+    "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
