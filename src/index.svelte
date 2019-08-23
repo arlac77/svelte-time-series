@@ -1,5 +1,6 @@
 <script context="module">
   import TimeSeries from './TimeSeries.svelte';
   import DataSet from './DataSet.svelte';
-  export { TimeSeries, DataSet };
+  import YAxis from './YAxis.svelte';
+  export { TimeSeries, DataSet, YAxis };
 </script>
