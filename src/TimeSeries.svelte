@@ -9,18 +9,21 @@
   export let yTicks = [];
   export let xTicks = [];
 
-  $: xScale = scaleLinear()
-    .domain([minX, maxX])
-    .range([padding.left, width - padding.right]);
+  let xScale, yScale;
 
-  $: yScale = scaleLinear()
-    .domain([Math.min.apply(null, yTicks), Math.max.apply(null, yTicks)])
-    .range([height - padding.bottom, padding.top]);
+  $: {
+    const minX = points[0].x;
+    const maxX = points[points.length - 1].x;
 
-  $: minX = points[0].x;
-  $: maxX = points[points.length - 1].x;
+    xScale = scaleLinear()
+      .domain([minX, maxX])
+      .range([padding.left, width - padding.right]);
 
-  
+    yScale = scaleLinear()
+      .domain([Math.min.apply(null, yTicks), Math.max.apply(null, yTicks)])
+      .range([height - padding.bottom, padding.top]);
+
+  }
 </script>
 
 <style>
