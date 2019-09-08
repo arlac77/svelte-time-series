@@ -1,3 +1,4 @@
+import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
@@ -32,6 +33,12 @@ export default {
   plugins: [
     resolve({ browser: true }),
     svelte(),
-    development && livereload("example/public")
+    development && livereload("example/public"),
+    dev({
+      port,
+      dirs: ["example/public"],
+      spa: "example/public/index.html",
+      basePath: "/base"
+    })
   ]
 };
