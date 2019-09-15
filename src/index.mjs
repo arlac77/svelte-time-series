@@ -1,4 +1,4 @@
-impor { Scale } from './scale.mjs';
+import { Scale } from './scale.mjs';
 
 
 export { Scale };

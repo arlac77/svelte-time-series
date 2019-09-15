@@ -22,7 +22,10 @@
     yScale = scaleLinear()
       .domain([Math.min.apply(null, yTicks), Math.max.apply(null, yTicks)])
       .range([height - padding.bottom, padding.top]);
+  }
 
+  function mousemove(event) {
+   // console.log(event.clientX, event.clientY);
   }
 </script>
 
@@ -58,7 +61,7 @@
   }
 </style>
 
-<svg>
+<svg on:mousemove={mousemove}>
   <slot name="y-axis">
     <g class="axis y-axis" transform="translate(0, {padding.top})">
       {#each yTicks as tick}
