@@ -3,7 +3,6 @@
 
   export let points = [];
   export let yTicks = [];
-  export let width = 500;
   export let height = 200;
 
   export let padding = { top: 20, right: 15, bottom: 20, left: 25 };

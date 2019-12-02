@@ -7,7 +7,6 @@
 
   export let points = [];
   export let yTicks = [];
-  export let xTicks = [];
 
   let xScale, yScale, path, area;
 
