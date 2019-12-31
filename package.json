@@ -39,7 +39,6 @@
   },
   "homepage": "https://github.com/arlac77/svelte-time-series#readme",
   "config": {
-    "port": 5000
   },
   "template": {
     "repository": {
