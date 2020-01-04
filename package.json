@@ -38,7 +38,6 @@
     "url": "https://github.com/arlac77/svelte-time-series/issues"
   },
   "homepage": "https://github.com/arlac77/svelte-time-series#readme",
-  "config": {},
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"
