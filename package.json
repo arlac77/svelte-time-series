@@ -18,6 +18,7 @@
     "d3-scale": "^3.0.1"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^6.1.0",
     "documentation": "^12.1.4",
     "rollup": "^1.28.0",
     "rollup-plugin-dev": "^1.1.1",
