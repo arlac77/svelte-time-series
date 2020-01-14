@@ -1,0 +1,10 @@
+{
+  "name": "svelte-time-series",
+  "description": "display time series data with svelte",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ]
+}
