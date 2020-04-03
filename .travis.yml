@@ -18,10 +18,10 @@ jobs:
       script: skip
       deploy:
         provider: script
-        skip_cleanup: 'true'
         script:
           - npx xsemantic-release
           - npx semantic-release
+        cleanup: 'false'
 branches:
   only:
     - master
