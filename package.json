@@ -40,7 +40,7 @@
   "homepage": "https://github.com/arlac77/svelte-time-series#readme",
   "template": {
     "inheritFrom": [
-      "arlac77/template-svelte",
+      "arlac77/template-svelte-component",
       "arlac77/template-github"
     ]
   }
