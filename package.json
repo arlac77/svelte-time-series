@@ -1,11 +1,20 @@
 {
   "name": "svelte-time-series",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "module": "src/index.mjs",
   "svelte": "src/index.svelte",
   "description": "display time series data with svelte",
   "keywords": [
     "svelte"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
   ],
   "license": "BSD-2-Clause",
   "scripts": {
@@ -40,8 +49,8 @@
   "homepage": "https://github.com/arlac77/svelte-time-series#readme",
   "template": {
     "inheritFrom": [
-      "arlac77/template-svelte-component",
-      "arlac77/template-github"
+      "arlac77/template-arlac77-github",
+      "arlac77/template-svelte-component"
     ]
   }
 }
