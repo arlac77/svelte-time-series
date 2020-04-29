@@ -24,7 +24,7 @@
     "lint": "documentation lint src/index.mjs"
   },
   "dependencies": {
-    "d3-scale": "^3.0.1"
+    "d3-scale": "^3.2.1"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
