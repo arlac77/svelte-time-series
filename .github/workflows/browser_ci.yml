@@ -9,6 +9,7 @@ jobs:
           - ubuntu-latest
         node:
           - 14.5.0
+          - 14.6.0
         browser:
           - chrome
           - firefox
@@ -32,6 +33,7 @@ jobs:
           node-version:
             - 14
             - 14.5.0
+            - 14.6.0
       - run: npm install
       - run: npx semantic-release
         env:
