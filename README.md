@@ -4,6 +4,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/svelte-time-series)](https://bundlephobia.com/result?p=svelte-time-series)
 [![downloads](http://img.shields.io/npm/dm/svelte-time-series.svg?style=flat-square)](https://npmjs.org/package/svelte-time-series)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/arlac77/svelte-time-series.git)
+[![Build Action Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fsvelte-time-series%2Fbadge&style=flat)](https://actions-badge.atrox.dev/arlac77/svelte-time-series/goto)
 
 # svelte-time-series
 
