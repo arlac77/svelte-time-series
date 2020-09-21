@@ -1,5 +1,5 @@
 <script>
-  import { TimeSeries, DataSet } from "../../src/index.svelte";
+  import { TimeSeries, DataSet } from "../../../src/index.svelte";
   import points from "./data.mjs";
 
   const padding = { top: 20, right: 15, bottom: 22, left: 25 };
