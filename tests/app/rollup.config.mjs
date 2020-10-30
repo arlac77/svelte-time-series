@@ -1,3 +1,5 @@
+import virtual from "@rollup/plugin-virtual";
+
 import resolve from "@rollup/plugin-node-resolve";
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
@@ -13,18 +15,18 @@ export default {
     format: "esm",
     file: `${basedir}/public/bundle.main.mjs`
   },
-  plugins: [
-    dev({
-      port,
-      dirs: [`${basedir}/public`],
-      spa: `${basedir}/public/index.html`,
-      basePath: `/components/svelte-time-series/${basedir}`
-    }),
-    svelte(),
-    resolve({
-      browser: true,
-      dedupe: importee =>
-        importee === "svelte" || importee.startsWith("svelte/")
-    })
-  ]
+  plugins: [dev({
+    port,
+    dirs: [`${basedir}/public`],
+    spa: `${basedir}/public/index.html`,
+    basePath: `/components/svelte-time-series/${basedir}`
+  }), svelte(), resolve({
+    browser: true,
+    dedupe: importee =>
+      importee === "svelte" || importee.startsWith("svelte/")
+  }), virtual({
+    "node-fetch": "export default fetch",
+    stream: "export class Readable {}",
+    buffer: "export class Buffer {}"
+  })]
 };
