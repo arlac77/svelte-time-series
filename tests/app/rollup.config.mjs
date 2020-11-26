@@ -1,3 +1,5 @@
+import postcss from "rollup-plugin-postcss";
+
 import virtual from "@rollup/plugin-virtual";
 
 import resolve from "@rollup/plugin-node-resolve";
@@ -28,5 +30,5 @@ export default {
     "node-fetch": "export default fetch",
     stream: "export class Readable {}",
     buffer: "export class Buffer {}"
-  })]
+  }), postcss()]
 };
