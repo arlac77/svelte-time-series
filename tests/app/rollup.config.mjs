@@ -23,7 +23,11 @@ export default {
       stream: "export class Readable {}",
       buffer: "export class Buffer {}"
     }),
-    svelte(),
+    svelte({
+      compilerOptions: {
+        dev: !production
+      }
+    }),
     postcss(),
     resolve({
       browser: true,
