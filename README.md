@@ -9,6 +9,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/svelte-time-series/badge.svg)](https://snyk.io/test/github/arlac77/svelte-time-series)
 [![Coverage Status](https://coveralls.io/repos/arlac77/svelte-time-series/badge.svg)](https://coveralls.io/github/arlac77/svelte-time-series)
+[![Tested with TestCafe](https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg)](https://github.com/DevExpress/testcafe)
 
 # svelte-time-series
 
