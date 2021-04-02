@@ -5,6 +5,9 @@
     "access": "public"
   },
   "main": "./src/index.mjs",
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "svelte": "./src/index.svelte",
   "description": "display time series data with svelte",
   "keywords": [
