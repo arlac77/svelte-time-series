@@ -1,7 +1,7 @@
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 [![npm](https://img.shields.io/npm/v/svelte-time-series.svg)](https://www.npmjs.com/package/svelte-time-series)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![minified size](https://badgen.net/bundlephobia/min/svelte-time-series)](https://bundlephobia.com/result?p=svelte-time-series)
+[![Open Bundle](https://bundlejs.com/badge-light.svg)](https://bundlejs.com/?q=svelte-time-series)
 [![downloads](http://img.shields.io/npm/dm/svelte-time-series.svg?style=flat-square)](https://npmjs.org/package/svelte-time-series)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/svelte-time-series.svg?style=flat-square)](https://github.com/arlac77/svelte-time-series/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fsvelte-time-series%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/svelte-time-series/goto)
