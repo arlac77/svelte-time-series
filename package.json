@@ -26,25 +26,22 @@
     "start": "vite",
     "test": "npm run test:cafe",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --page-request-timeout 9000 --app-init-delay 3000 --app vite",
-    "docs": "documentation readme --section=API ./src/**/*.mjs && documentation readme --section=API {{javascript.source}}",
+    "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "documentation lint ./src/index.mjs && npm run lint:docs",
-    "lint:docs": "documentation lint ./src/**/*.mjs && documentation lint {{javascript.source}}",
+    "lint:docs": "documentation lint ./src/**/*.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
-    "d3-scale": "^4.0.0"
+    "d3-scale": "^4.0.0",
+    "mf-hosting": "^1.7.1"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-virtual": "^2.1.0",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "documentation": "^13.2.5",
     "npm-pkgbuild": "^10.11.3",
-    "rollup": "^2.75.7",
-    "rollup-plugin-dev": "^2.0.2",
     "semantic-release": "^19.0.3",
     "svelte": "^3.49.0",
     "testcafe": "^1.19.0",
