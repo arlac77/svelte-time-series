@@ -1,24 +1,24 @@
-import { readFile } from "fs/promises";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 
-const encodingOptions = { encoding: "utf8" };
-
 export default defineConfig(async ({ command, mode }) => {
-  const pkg = JSON.parse(
-    await readFile(
-      new URL("package.json", import.meta.url).pathname,
-      encodingOptions
-    )
+  const { extractFromPackage } = await import(
+    new URL("node_modules/npm-pkgbuild/src/module.mjs", import.meta.url)
   );
-
+  const res = extractFromPackage({
+    dir: new URL("./", import.meta.url).pathname
+  });
+  const first = await res.next();
+  const pkg = first.value;
+  const properties = pkg.properties;
+  const base = properties["http.path"] + "/";
   const production = mode === "production";
 
-  process.env["VITE_NAME"] = pkg.name;
-  process.env["VITE_DESCRIPTION"] = pkg.description;
-  process.env["VITE_VERSION"] = pkg.version;
+  process.env["VITE_NAME"] = properties.name;
+  process.env["VITE_DESCRIPTION"] = properties.description;
+  process.env["VITE_VERSION"] = properties.version;
 
-  const base = `/components/${pkg.name}/example/`;
+  const open = process.env.CI ? {} : { open: base };
 
   return {
     base,
@@ -31,14 +31,9 @@ export default defineConfig(async ({ command, mode }) => {
         }
       })
     ],
-    optimizeDeps: {
-      exclude: [
-        ...Object.keys(pkg.dependencies).filter(d => d.startsWith("svelte"))
-      ]
-    },
-    server: { host: true },
+    server: { host: true, ...open },
     build: {
-      outDir: "../build",
+      outDir: "../../../build",
       target: "esnext",
       emptyOutDir: true,
       minify: production,
