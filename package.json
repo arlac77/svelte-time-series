@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "d3-scale": "^4.0.0",
-    "mf-hosting": "^1.7.1"
+    "mf-hosting": "^1.7.2"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^9.0.2",
