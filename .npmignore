@@ -3,11 +3,10 @@ tests
 doc
 *.log
 *.tmp
-.test
-.tmp
 .node-version
 .vscode
 .github
 jsconfig.json
-vite.config.js
 pkg
+vite.config.mts
+dist
