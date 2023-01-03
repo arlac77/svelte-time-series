@@ -48,7 +48,7 @@
     "stylelint-config-standard": "^29.0.0",
     "svelte": "^3.55.0",
     "testcafe": "^15.1.317922",
-    "vite": "^4.0.3"
+    "vite": "^4.0.4"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.8.2"
