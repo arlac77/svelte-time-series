@@ -51,7 +51,6 @@
     "vite": "^4.0.4"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.8.2",
     "mf-hosting-frontend": "^1.0.4"
   },
   "repository": {
@@ -67,7 +66,8 @@
       "${install.dir}": "build/",
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
-    "groups": "examples"
+    "example": true,
+    "frontend": true
   },
   "release": {
     "plugins": [
