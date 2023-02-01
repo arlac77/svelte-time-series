@@ -42,7 +42,7 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "documentation": "^14.0.1",
     "mf-styling": "^1.7.42",
-    "npm-pkgbuild": "^11.1.12",
+    "npm-pkgbuild": "^11.1.14",
     "semantic-release": "^20.1.0",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
@@ -52,7 +52,7 @@
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.5",
-    "mf-hosting-frontend": "^1.6.0"
+    "mf-hosting-frontend": "^1.6.2"
   },
   "repository": {
     "type": "git",
