@@ -26,9 +26,9 @@
     "start": "vite",
     "test": "npm run test:cafe",
     "test:cafe": "testcafe --experimental-esm $BROWSER:headless tests/cafe/*.*js -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
-    "docs": "documentation readme --section=API ./src/**/*.mjs && documentation readme --section=API {{javascript.source}}",
+    "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:css && npm run lint:docs",
-    "lint:docs": "documentation lint ./src/**/*.mjs && documentation lint {{javascript.source}}",
+    "lint:docs": "documentation lint ./src/**/*.mjs",
     "lint:css": "stylelint ./src/*.css",
     "preview": "vite preview"
   },
