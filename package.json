@@ -41,7 +41,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "documentation": "^14.0.1",
-    "mf-styling": "^1.7.51",
+    "mf-styling": "^1.7.50",
     "npm-pkgbuild": "^11.7.5",
     "semantic-release": "^21.0.1",
     "stylelint": "^15.4.0",
@@ -52,7 +52,7 @@
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.5",
-    "mf-hosting-frontend": "^1.7.1"
+    "mf-hosting-frontend": "^1.7.2"
   },
   "repository": {
     "type": "git",
