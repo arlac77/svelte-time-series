@@ -38,8 +38,8 @@
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/release-notes-generator": "^11.0.1",
-    "@sveltejs/vite-plugin-svelte": "^2.4.0",
+    "@semantic-release/release-notes-generator": "^11.0.2",
+    "@sveltejs/vite-plugin-svelte": "^2.4.1",
     "documentation": "^14.0.2",
     "mf-styling": "^1.7.57",
     "npm-pkgbuild": "^11.8.6",
@@ -47,7 +47,7 @@
     "stylelint": "^15.6.2",
     "stylelint-config-standard": "^33.0.0",
     "svelte": "^3.59.1",
-    "testcafe": "^2.6.0",
+    "testcafe": "^2.6.1",
     "vite": "^4.3.9"
   },
   "optionalDependencies": {
