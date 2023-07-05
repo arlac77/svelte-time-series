@@ -5,7 +5,11 @@
     "access": "public"
   },
   "main": "./src/index.mjs",
-  "svelte": "./src/index.svelte",
+  "exports": {
+    ".": {
+      "svelte": "./src/index.svelte"
+    }
+  },
   "description": "display time series data with svelte",
   "keywords": [
     "component",
