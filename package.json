@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "svelte": "./src/index.svelte"
-    }
+    },
+    "./css": "./src/entitlement.css"
   },
   "description": "display time series data with svelte",
   "keywords": [
@@ -28,8 +29,10 @@
   "scripts": {
     "prepare": "vite build",
     "start": "vite",
-    "test": "npm run test:cafe",
+    "test": "npm run test:ava && npm run test:cafe",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
+    "test:ava": "ava --timeout 2m tests/*-ava.mjs tests/*-ava-node.mjs",
+    "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:css && npm run lint:docs",
     "lint:docs": "documentation lint ./src/**/*.mjs",
@@ -37,22 +40,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "d3-scale": "^4.0.0"
+    "d3-scale": "^4.0.0",
+    "svelte-dnd-action": "^0.9.24"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^11.0.4",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "ava": "^5.3.1",
+    "c8": "^8.0.0",
     "documentation": "^14.0.2",
     "mf-styling": "^3.0.0",
-    "npm-pkgbuild": "^11.8.14",
+    "npm-pkgbuild": "^11.9.0",
     "semantic-release": "^21.0.7",
     "stylelint": "^15.10.1",
     "stylelint-config-standard": "^34.0.0",
     "svelte": "^4.0.5",
     "testcafe": "^3.0.1",
-    "vite": "^4.4.2"
+    "vite": "^4.4.4"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.5",
@@ -123,11 +129,13 @@
   },
   "template": {
     "inheritFrom": [
+      "arlac77/svelte-entitlement",
       "arlac77/template-arlac77-github",
       "arlac77/template-cloudflare",
       "arlac77/template-css",
       "arlac77/template-pacman",
-      "arlac77/template-svelte-component"
+      "arlac77/template-svelte-component",
+      "arlac77/template-vite"
     ]
   }
 }
