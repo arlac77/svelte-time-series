@@ -16,7 +16,7 @@ jobs:
         os:
           - ubuntu-latest
         node:
-          - 18.11.0
+          - 18.18.0
         browser:
           - chrome
           - firefox
