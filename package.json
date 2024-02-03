@@ -2,7 +2,8 @@
   "name": "svelte-time-series",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "main": "./src/index.mjs",
   "exports": {
