@@ -1,33 +1,63 @@
 <script>
   import { scaleLinear } from "d3-scale";
 
-  export let width = 500;
-  export let height = 200;
-  export let padding = { top: 20, right: 15, bottom: 22, left: 25 };
+  let {
+    width = 500,
+    height = 200,
+    padding = { top: 20, right: 15, bottom: 22, left: 25 },
+    points = [],
+    yTicks = [],
+    xTicks = []
+  } = $props();
 
-  export let points = [];
-  export let yTicks = [];
-  export let xTicks = [];
+  let xScale = $state();
+  let yScale = $state();
 
-  let xScale, yScale;
+  const minX = points[0].x;
+  const maxX = points[points.length - 1].x;
 
-  $: {
-    const minX = points[0].x;
-    const maxX = points[points.length - 1].x;
+  xScale = scaleLinear()
+    .domain([minX, maxX])
+    .range([padding.left, width - padding.right]);
 
-    xScale = scaleLinear()
-      .domain([minX, maxX])
-      .range([padding.left, width - padding.right]);
+  yScale = scaleLinear()
+    .domain([Math.min.apply(null, yTicks), Math.max.apply(null, yTicks)])
+    .range([height - padding.bottom, padding.top]);
 
-    yScale = scaleLinear()
-      .domain([Math.min.apply(null, yTicks), Math.max.apply(null, yTicks)])
-      .range([height - padding.bottom, padding.top]);
-  }
-
-  function mousemove(event) {
-   // console.log(event.clientX, event.clientY);
-  }
+  function mousemove(event) {}
 </script>
+
+<svg {mousemove}>
+  <slot name="y-axis">
+    <g class="axis y-axis" transform="translate(0, {padding.top})">
+      {#each yTicks as tick}
+        <g
+          class="tick tick-{tick}"
+          transform="translate(0, {yScale(tick) - padding.bottom})"
+        >
+          <line x2="100%" />
+          <text y="-4">{tick}</text>
+        </g>
+      {/each}
+    </g>
+  </slot>
+
+  <slot name="x-axis">
+    <g class="axis x-axis">
+      {#each xTicks as tick}
+        <g
+          class="tick tick-{tick}"
+          transform="translate({xScale(tick)},{height})"
+        >
+          <line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
+          <text y="-2">{tick}</text>
+        </g>
+      {/each}
+    </g>
+  </slot>
+
+  <slot />
+</svg>
 
 <style>
   svg {
@@ -60,33 +90,3 @@
     text-anchor: middle;
   }
 </style>
-
-<svg on:mousemove={mousemove}>
-  <slot name="y-axis">
-    <g class="axis y-axis" transform="translate(0, {padding.top})">
-      {#each yTicks as tick}
-        <g
-          class="tick tick-{tick}"
-          transform="translate(0, {yScale(tick) - padding.bottom})">
-          <line x2="100%" />
-          <text y="-4">{tick}</text>
-        </g>
-      {/each}
-    </g>
-  </slot>
-
-  <slot name="x-axis">
-    <g class="axis x-axis">
-      {#each xTicks as tick}
-        <g
-          class="tick tick-{tick}"
-          transform="translate({xScale(tick)},{height})">
-          <line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
-          <text y="-2">{tick}</text>
-        </g>
-      {/each}
-    </g>
-  </slot>
-
-  <slot />
-</svg>
