@@ -1,5 +1,6 @@
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
+import { compression } from "vite-plugin-compression2";
 import { extractFromPackage } from "npm-pkgbuild";
 
 export default defineConfig(async ({ command, mode }) => {
@@ -27,7 +28,25 @@ export default defineConfig(async ({ command, mode }) => {
       svelte({
         compilerOptions: {
           dev: !production
-        }
+        },
+      }),
+      compression({
+        algorithm: "brotliCompress",
+        exclude: [
+          /\.(map)$/,
+          /\.(br)$/,
+          /\.(gz)$/,
+          /\.(png)$/,
+          /\.(jpg)$/,
+          /\.(gif)$/,
+          /\.(webp)$/,
+          /\.(heic)$/,
+          /\.(avif)$/,
+          /\.(jxl)$/,
+          /\.(pdf)$/,
+          /\.(docx)$/
+        ],
+        threshold: 500
       })
     ],
     server: { host: true },
