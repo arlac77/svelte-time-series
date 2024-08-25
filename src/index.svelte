@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
   import { Scale } from './index.mjs';
   import TimeSeries from './TimeSeries.svelte';
   import DataSet from './DataSet.svelte';
