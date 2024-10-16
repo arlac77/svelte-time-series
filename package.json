@@ -48,7 +48,7 @@
     "@semantic-release/release-notes-generator": "^14.0.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.8",
     "documentation": "^14.0.3",
-    "mf-styling": "^3.2.3",
+    "mf-styling": "^3.2.4",
     "npm-pkgbuild": "^15.6.0",
     "semantic-release": "^24.1.2",
     "stylelint": "^16.10.0",
