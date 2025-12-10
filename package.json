@@ -31,7 +31,7 @@
     "prepare": "node --run prepare:vite",
     "prepare:vite": "vite build",
     "start": "vite",
-    "test": "node --run test:cafe && node --run test:playwright",
+    "test": "node --run test:playwright",
     "test:playwright": "npx playwright test",
     "docs": "documentation readme --section=API ./src**/*.mjs",
     "lint": "node --run lint:css && node --run lint:docs",

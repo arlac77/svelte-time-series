@@ -1,12 +1,6 @@
-import { Selector } from "testcafe";
+import { test, expect } from "@playwright/test";
 
-const base = "http://localhost:5173/";
-
-fixture`Getting Started`.page`${base}`;
-
-test("display", async t => {
-  const title = Selector("h1");
-  await t
-    .expect(title.innerText)
-    .eql("Example");
+test("display", async ({ page }) => {
+  await page.goto("http://localhost:5173/");
+  await expect(page.getByRole("heading", { name: "Example" })).toBeVisible();
 });
