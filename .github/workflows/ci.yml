@@ -14,6 +14,7 @@ permissions:
 jobs:
   test-node:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     strategy:
       matrix:
         node-version:
@@ -27,6 +28,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install
         run: npm ci
+      - name: install playwright
+        run: npx playwright install --with-deps
+      - name: install npm
+        run: npm cit
+      - name: upload test report
+        uses: actions/upload-artifact@v5
+        with:
+          name: test-report
+          path: ${{ github.workspace }}/playwright-report/**/*
+          retention-days: 30
+        if: ${{ !cancelled() }}
       - name: test and coverage
         run: npm run cover --if-present
       - name: coveralls
