@@ -8,6 +8,13 @@ doc
 .github
 jsconfig.json
 pkg
+playwright.config.js
 vite.config.mts
 dist
 .stylelintrc.json
+.last-run.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

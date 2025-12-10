@@ -31,7 +31,8 @@
     "prepare": "node --run prepare:vite",
     "prepare:vite": "vite build",
     "start": "vite",
-    "test": "node --run test:cafe",
+    "test": "node --run test:cafe && node --run test:playwright",
+    "test:playwright": "npx playwright test",
     "docs": "documentation readme --section=API ./src**/*.mjs",
     "lint": "node --run lint:css && node --run lint:docs",
     "lint:docs": "documentation lint ./src**/*.mjs",
@@ -42,6 +43,7 @@
     "d3-scale": "^4.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.2",
@@ -50,6 +52,7 @@
     "documentation": "^14.0.3",
     "mf-styling": "^3.2.20",
     "npm-pkgbuild": "^19.1.0",
+    "playwright": "^1.57.0",
     "semantic-release": "^25.0.2",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
@@ -133,6 +136,7 @@
       "arlac77/template-cloudflare",
       "arlac77/template-css",
       "arlac77/template-npm-pkgbuild",
+      "arlac77/template-playwright",
       "arlac77/template-svelte-component"
     ]
   }
