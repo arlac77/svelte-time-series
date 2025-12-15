@@ -50,7 +50,7 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "documentation": "^14.0.3",
-    "mf-styling": "^3.2.20",
+    "mf-styling": "^3.2.24",
     "npm-pkgbuild": "^19.1.2",
     "playwright": "^1.57.0",
     "semantic-release": "^25.0.2",
