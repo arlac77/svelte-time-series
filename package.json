@@ -57,7 +57,7 @@
     "stylelint": "^17.4.0",
     "stylelint-config-standard": "^40.0.0",
     "svelte": "^5.53.10",
-    "vite": "^7.3.1",
+    "vite": "^8.0.0",
     "vite-plugin-compression2": "^2.5.0"
   },
   "peerDependencies": {
