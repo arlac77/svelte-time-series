@@ -50,7 +50,7 @@
     "@semantic-release/release-notes-generator": "^14.1.1",
     "@sveltejs/vite-plugin-svelte": "^7.2.0",
     "documentation": "^14.0.3",
-    "mf-styling": "^3.3.27",
+    "mf-styling": "^3.3.28",
     "npm-pkgbuild": "^20.8.6",
     "playwright": "^1.62.0",
     "semantic-release": "^25.0.8",
@@ -64,7 +64,7 @@
     "svelte": "^5.56.0"
   },
   "optionalDependencies": {
-    "mf-hosting-cloudflare": "^2.0.1",
+    "mf-hosting-cloudflare": "^2.0.2",
     "mf-hosting-frontend": "^4.0.9"
   },
   "repository": {
